@@ -1,0 +1,12 @@
+# Git roots
+.balena/
+
+
+# Local environment variables
+.env
+
+# Dependencies
+app/node_modules
+
+# Build files
+app/build

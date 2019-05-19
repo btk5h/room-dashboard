@@ -1,0 +1,52 @@
+{
+  "name": "room-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard electron app powered by balena",
+  "main": "main.js",
+  "homepage": "./",
+  "private": true,
+  "scripts": {
+    "dev:react": "BROWSER=none NODE_PATH=src react-scripts start",
+    "dev:electron": "wait-on http://localhost:3000 && URL_LAUNCHER_NODE=1 URL_LAUNCHER_URL=http://localhost:3000 NODE_ENV=development electron .",
+    "dev": "concurrently -k yarn:dev:react yarn:dev:electron",
+    "start": "URL_LAUNCHER_NODE=1 NODE_ENV=production startx ./node_modules/electron/dist/electron .",
+    "local": "NODE_ENV=production electron .",
+    "build": "NODE_PATH=src react-scripts build",
+    "test": "NODE_PATH=src react-scripts test --env=jsdom",
+    "eject": "NODE_PATH=src react-scripts eject",
+    "electron": "URL_LAUNCHER_NODE=1 electron ."
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "electron": "^5.0.1",
+    "electron-rebuild": "^1.7.2",
+    "eventemitter3": "^3.1.2",
+    "lockfile": "^1.0.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-live-clock": "^3.1.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.1",
+    "react-spring": "^8.0.20",
+    "reconnecting-websocket": "^4.1.10",
+    "styled-components": "^4.2.0",
+    "typeface-nunito": "^0.0.72",
+    "typeface-roboto": "^0.0.54"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "prettier": "^1.17.1",
+    "wait-on": "^3.2.0"
+  }
+}
