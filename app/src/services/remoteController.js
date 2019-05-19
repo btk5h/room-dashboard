@@ -20,6 +20,8 @@ export function RemoteControlProvider(props) {
 
   useEffect(() => {
     const ws = new ReconnectingWebSocket(server)
+    
+    window.emitRemote = data => eventStream.emit("event", data)
 
     ws.addEventListener("open", () => {
       doActivity()
