@@ -8,12 +8,15 @@ const DashboardContainer = styled.div`
   max-height: 100%;
   width: 100vw;
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
 `
 
 const TopBarContainer = styled.nav`
   height: 72px;
   width: 100vw;
   max-width: 100%;
+  flex: 0 0;
   display: flex;
   align-items: center;
 `
@@ -22,6 +25,10 @@ const ClockWidget = styled(Clock)`
   margin-left: auto;
   font-family: Nunito, sans-serif;
   font-size: 48px;
+`
+
+const AppContainer = styled.div`
+  flex: 1 0;
 `
 
 function TopBar() {
@@ -36,6 +43,7 @@ export default function Dashboard() {
   return (
     <DashboardContainer>
       <TopBar/>
+      <AppContainer/>
     </DashboardContainer>
   )
 }
