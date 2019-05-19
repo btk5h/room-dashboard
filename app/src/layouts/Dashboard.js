@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components/macro"
-import { Route } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import Clock from "react-live-clock"
 
 import { dashboardApps } from "services/registry"
@@ -47,12 +47,14 @@ export default function Dashboard() {
     <DashboardContainer>
       <TopBar/>
       <AppContainer>
-        {
-          Object.entries(dashboardApps)
-            .map(([key, Component]) => (
-              <Route key={key} path={`dashboard/${key}`} component={Component}/>
-            ))
-        }
+        <Switch>
+          {
+            Object.entries(dashboardApps)
+              .map(([key, Component]) => (
+                <Route key={key} path={`dashboard/${key}`} component={Component}/>
+              ))
+          }
+        </Switch>
       </AppContainer>
     </DashboardContainer>
   )
