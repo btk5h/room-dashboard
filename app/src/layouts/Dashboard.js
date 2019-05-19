@@ -1,6 +1,9 @@
 import React from "react"
 import styled from "styled-components/macro"
+import { Route } from "react-router-dom"
 import Clock from "react-live-clock"
+
+import { dashboardApps } from "services/registry"
 
 const DashboardContainer = styled.div`
   padding: 72px;
@@ -34,7 +37,7 @@ const AppContainer = styled.div`
 function TopBar() {
   return (
     <TopBarContainer>
-      <ClockWidget format="h:mm A" ticking={true} timezone="America/Los_Angeles" />
+      <ClockWidget format="h:mm A" ticking={true} timezone="America/Los_Angeles"/>
     </TopBarContainer>
   )
 }
@@ -43,7 +46,14 @@ export default function Dashboard() {
   return (
     <DashboardContainer>
       <TopBar/>
-      <AppContainer/>
+      <AppContainer>
+        {
+          Object.entries(dashboardApps)
+            .map(([key, Component]) => (
+              <Route key={key} path={`dashboard/${key}`} component={Component}/>
+            ))
+        }
+      </AppContainer>
     </DashboardContainer>
   )
 }
