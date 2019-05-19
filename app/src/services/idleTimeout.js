@@ -33,7 +33,7 @@ export function IdleTimeoutProvider(props) {
     console.log(`Idle timeout: lockCount = ${lockCount}, lastActivity = ${lastActivity}`)
 
     if (!lockCount) {
-      const idleHandle = setTimeout(monitorOff, 30000)
+      const idleHandle = setTimeout(monitorOff, 60000)
 
       return () => {
         clearTimeout(idleHandle)
