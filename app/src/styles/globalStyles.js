@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import "typeface-roboto"
-import "typeface-nunito"
+import "typeface-rubik"
 
 export const GlobalStyles = createGlobalStyle`
   body {
