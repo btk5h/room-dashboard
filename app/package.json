@@ -41,8 +41,8 @@
     "react-spring": "^8.0.20",
     "reconnecting-websocket": "^4.1.10",
     "styled-components": "^4.2.0",
-    "typeface-nunito": "^0.0.72",
-    "typeface-roboto": "^0.0.54"
+    "typeface-roboto": "^0.0.54",
+    "typeface-rubik": "^0.0.72"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",

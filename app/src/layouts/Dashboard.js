@@ -26,7 +26,7 @@ const TopBarContainer = styled.nav`
 
 const ClockWidget = styled(Clock)`
   margin-left: auto;
-  font-family: Nunito, sans-serif;
+  font-family: Rubik, sans-serif;
   font-size: 48px;
 `
 
